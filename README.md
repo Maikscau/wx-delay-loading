@@ -42,7 +42,8 @@ App({
 </delay-loading>
 ```
 
-5.发起请求时，例如 wx.request() ，调用实例方法 setDelayLoading(delaytime) delaytime 默认为500，即0.5s；请求结束时，调用实例方法 checkReqCountClear()
+5.请求开始时（例如 wx.request），调用实例方法 setDelayLoading(delaytime) delaytime 默认为500，即 0.5s；  
+请求结束时，调用实例方法 checkReqCountClear()
 ```js
 // page.js
 import DelayLoading from 'wx-delay-loading/utils'
@@ -53,7 +54,8 @@ data: {
 },
 
 methods: {
-  request () {
+  // 仅为示例
+  exampleRequest () {
     // 请求开始
     Loading.setDelayLoading(300) // 请求超过0.3秒没完成，显示 loading 组件
     wx.request({
