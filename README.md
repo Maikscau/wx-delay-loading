@@ -70,3 +70,18 @@ methods: {
 
 ## 三、调试——模拟低网速情况
 通常在网络环境良好的情况下，请求都会很快完成，不会超过0.5s。可以通过微信开发者工具-调试器-Network，把网络设置 Online，更改为 Slow 3G，或者使用 Custom 自定义网络速度。
+
+## 四、文档
+### 1、组件 options
+| 参数 | 说明 | 类型 | 默认值 |
+| :-------- | :--------| :------: | :--
+| customLoading  | 是否使用 slot 插槽自定义 loading 内容 |  boolean   | false |
+| isShow  | 是否显示 loading |  boolean   | false |
+
+### 2、实例 methods
+| 方法名 | 说明 | 参数 | 参数类型 | 返回值 |
+| :-------- | :--------| :------: | :------: |:--
+| getInstance  | 调用其它方法前，获取唯一实例 |  -  | - | 实例 object |
+| initComponent  | 全局安装组件，挂载必要属性 |  页面 data 内传入组件属性 isShow 的变量的名称   | string | - |
+| setDelayLoading  | 标记请求开始并设置延迟显示的时间 |  延迟的时间，单位毫秒   | number | - |
+| checkReqCountClear  | 检测正在进行的请求数，若清零则隐藏 loading 组件 |  -   | - | - |
