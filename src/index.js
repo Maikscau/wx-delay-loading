@@ -13,6 +13,14 @@ Component({
     }
   },
 
+  lifetimes: {
+    attached () {
+      const pages = getCurrentPages()
+      const curPage = pages[pages.length - 1]
+      console.log(curPage, '=====')
+    }
+  },
+
   /**
    * 组件的方法列表
    */

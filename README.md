@@ -5,7 +5,7 @@
 ## 二、使用
 1.安装 `npm i wx-delay-loading`
 
-2.组件初始化：在 app.js-onLaunch 执行组件实例初始化方法，并传入用于控制 loading 组件显示隐藏的页面变量名称（注：参数类型为string，本例使用 isLoading）
+2.组件初始化：在 app.js-onLaunch 执行组件实例初始化方法，并传入用于控制 loading 组件显示隐藏的页面 data 内变量的名称（注：参数类型为string，本例使用 isLoading）
 ```js
 // app.js
 import DelayLoading from 'wx-delay-loading/utils' 
@@ -13,7 +13,7 @@ import DelayLoading from 'wx-delay-loading/utils'
 App({
   onLaunch: function () {
     const Loading = DelayLoading.getInstance()
-    Loading.initComponent('isLoading')
+    Loading.initComponent('isLoading') // 注意：此处没有写错，传入的是 key，而不是 value
   }
 })
 ```
@@ -82,6 +82,6 @@ methods: {
 | 方法名 | 说明 | 参数 | 参数类型 | 返回值 |
 | :-------- | :--------| :------: | :------: |:--
 | getInstance  | 调用其它方法前，获取唯一实例 |  -  | - | 实例 object |
-| initComponent  | 全局安装组件，挂载必要属性 |  页面 data 内传入组件属性 isShow 的变量的名称   | string | - |
+| initComponent  | 全局安装组件，挂载必要属性 |  页面 data 内传入组件属性 isShow 的变量的名称（告知组件，你使用 data 哪个属性控制组件显示隐藏，必须与传入组件的 isShow 的属性对应）   | string | - |
 | setDelayLoading  | 标记请求开始并设置延迟显示的时间 |  延迟的时间，单位毫秒   | number | - |
 | checkReqCountClear  | 检测正在进行的请求数，若清零则隐藏 loading 组件 |  -   | - | - |
