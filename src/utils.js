@@ -59,6 +59,10 @@ export default class DelayLoading {
 	
 	/* 请求开始设置页面加载动画显示时机（加载时间超过time则显示加载动画） */
 	setDelayLoading (time = 500) {
+		// 参数类型检验
+		if (typeof time !== 'number') {
+			throw new Error('the param must be number')
+		}
 		// 请求计数 +1
 		this._addReqCount()
 		// 设置延迟显示定时器
