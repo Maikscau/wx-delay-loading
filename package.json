@@ -1,0 +1,23 @@
+{
+  "name": "wx-delay-loading",
+  "version": "1.0.0",
+  "description": "可控制延迟显示的微信小程序loading组件，默认请求超过0.5s才显示loading动画；支持自定义loading显示内容",
+  "main": "src/index.js",
+  "miniprogram": "src",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "loading",
+    "wx",
+    "delay",
+    "weixin",
+    "custom"
+  ],
+  "author": "maikscau",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Maikscau/wx-delay-loading.git"
+  }
+}

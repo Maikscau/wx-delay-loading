@@ -1,0 +1,15 @@
+<view 
+  wx:if="{{isShow}}"
+  class="loading" 
+  catchtap="stop"
+>
+  <block wx:if="{{!customLoading}}">
+    <view class="container">
+      <view class="circle"></view>
+      <view class="text">加载中...</view>
+    </view>
+  </block>
+  <block wx:else>
+    <slot></slot>
+  </block>
+</view> 
