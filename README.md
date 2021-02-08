@@ -31,15 +31,15 @@ App({
 // page.wxml 
 
 // 不使用 slot
-<delay-loading isShow="{{isLoading}}" />
+<wx-delay-loading isShow="{{isLoading}}" />
 
 // 使用 slot 自定义内容
-<delay-loading customLoading="{{true}}" isShow="{{isLoading}}">
+<wx-delay-loading customLoading="{{true}}" isShow="{{isLoading}}">
   <view class="container">
     <image class="logo" src="/static/image/logo.png" mode="widthFix" />
     <view class="text">加载中...</view>
   </view>
-</delay-loading>
+</wx-delay-loading>
 ```
 
 5.请求开始时（例如 wx.request），调用实例方法 setDelayLoading(delaytime) delaytime 默认为500，即 0.5s；  
