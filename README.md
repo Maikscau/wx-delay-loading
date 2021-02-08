@@ -67,7 +67,58 @@ methods: {
     })
   }
 }
+```
 
+### **进阶：在统一封装请求 request.js 内使用**
+项目开发中，通常会针对请求和响应进行统一处理，封装成一个 request.js 使用。注意：在使用组件的页面内依然要保留传递给 isShow 属性值的 data 属性
+
+```js
+// request.js
+import DelayLoading from 'wx-delay-loading/utils'
+const Loading = DelayLoading.getInstance()
+
+const request = (options) => {
+  return new Promise ((resolve, reject) => {
+    // 请求开始前调用设置延时
+    Loading.setDelayLoading()
+    wx.request({
+      ...options,
+      success (res) {
+        // 请求成功后的各种处理操作...
+        resolve(res.data)
+      },
+      fail (err) {
+        // 请求失败后的各种处理操作...
+        reject(err)
+      },
+      complete () {
+        // 请求完成
+        Loading.checkReqCountClear()
+      }
+    })
+  })
+}
+export default request
+```
+```js
+// page.js
+import request from request.js
+
+data: {
+  isLoading: false
+},
+
+methods: {
+  // 仅为示例
+  exampleRequest () {
+    // 使用封装后的request
+    request({
+      url: 'https://example.com/getData'
+    }).then(res => {
+      // 对返回数据的处理...
+    })
+  }
+}
 ```
 
 ## 三、调试——模拟低网速情况

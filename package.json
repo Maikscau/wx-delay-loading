@@ -1,6 +1,6 @@
 {
   "name": "wx-delay-loading",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "可控制延迟显示的微信小程序loading组件，默认请求超过0.5s才显示loading动画；支持自定义loading显示内容",
   "main": "src/index.js",
   "miniprogram": "src",
