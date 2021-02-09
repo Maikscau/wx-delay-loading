@@ -53,20 +53,19 @@ data: {
   isLoading: false
 },
 
-methods: {
-  // 仅为示例
-  exampleRequest () {
-    // 请求开始
-    Loading.setDelayLoading(300) // 请求超过0.3秒没完成，显示 loading 组件
-    wx.request({
-      url: 'https://example.com/getData',
-      complete () {
-        // 请求完成
-        Loading.checkReqCountClear()
-      }
-    })
-  }
+// 仅为示例
+exampleRequest () {
+  // 请求开始
+  Loading.setDelayLoading(300) // 请求超过0.3秒没完成，显示 loading 组件
+  wx.request({
+    url: 'https://example.com/getData',
+    complete () {
+      // 请求完成
+      Loading.checkReqCountClear()
+    }
+  })
 }
+
 ```
 
 ### **进阶：在统一封装请求 request.js 内使用**
@@ -108,16 +107,14 @@ data: {
   isLoading: false
 },
 
-methods: {
-  // 仅为示例
-  exampleRequest () {
-    // 使用封装后的request
-    request({
-      url: 'https://example.com/getData'
-    }).then(res => {
-      // 对返回数据的处理...
-    })
-  }
+// 仅为示例
+exampleRequest () {
+  // 使用封装后的request
+  request({
+    url: 'https://example.com/getData'
+  }).then(res => {
+    // 对返回数据的处理...
+  })
 }
 ```
 
